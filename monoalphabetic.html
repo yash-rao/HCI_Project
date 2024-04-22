@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monoalphabetic Cipher</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="monoalphabetic" class="cipher-section">
+        <h2>Monoalphabetic Cipher</h2>
+        <div id="monoalphabetic-teaching">
+            <h3>Teaching Material</h3>
+            <p>The Monoalphabetic Cipher is a substitution cipher where each letter in the plaintext is mapped to a unique letter in the ciphertext.</p>
+            <p>To encrypt a message, a key (substitution alphabet) is used to map each letter in the plaintext to a unique letter in the ciphertext.</p>
+            <p>To decrypt a message, the reverse mapping is applied using the same key.</p>
+        </div>
+        <div id="monoalphabetic-form">
+            <label for="monoalphabetic-plaintext">Enter plaintext:</label><br>
+            <input type="text" id="monoalphabetic-plaintext" name="monoalphabetic-plaintext"><br>
+            <label for="monoalphabetic-key">Enter substitution key:</label><br>
+            <input type="text" id="monoalphabetic-key" name="monoalphabetic-key"><br>
+            <button onclick="monoalphabeticEncrypt()">Encrypt</button>
+            <button onclick="monoalphabeticDecrypt()">Decrypt</button>
+            <p id="monoalphabetic-ciphertext"></p>
+        </div>
+        <div id="monoalphabetic-quiz">
+            <h3>Quiz</h3>
+            <div class="quiz-question" id="monoalphabetic-quiz-question-1">
+                <p>1. The Monoalphabetic Cipher is a:</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="monoalphabetic-q1" value="a"> Substitution Cipher</label>
+                    <label><input type="radio" name="monoalphabetic-q1" value="b"> Transposition Cipher</label>
+                    <label><input type="radio" name="monoalphabetic-q1" value="c"> Polygraphic Cipher</label>
+                </div>
+            </div>
+            <div class="quiz-question" id="monoalphabetic-quiz-question-2">
+                <p>2. In the Monoalphabetic Cipher, each letter in the plaintext is:</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="monoalphabetic-q2" value="a"> Randomly replaced</label>
+                    <label><input type="radio" name="monoalphabetic-q2" value="b"> Replaced by the letter in the same position in the alphabet</label>
+                    <label><input type="radio" name="monoalphabetic-q2" value="c"> Mapped to a unique letter in the ciphertext</label>
+                </div>
+            </div>
+            <div class="quiz-question" id="monoalphabetic-quiz-question-3">
+                <p>3. What is the primary weakness of the Monoalphabetic Cipher?</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="monoalphabetic-q3" value="a"> Vulnerable to frequency analysis</label>
+                    <label><input type="radio" name="monoalphabetic-q3" value="b"> Vulnerable to brute-force attacks</label>
+                    <label><input type="radio" name="monoalphabetic-q3" value="c"> Generates long ciphertext</label>
+                </div>
+            </div>
+	    <div class="quiz-question" id="monoalphabetic-quiz-question-4">
+                <p>4. How many possible keys are there in the Monoalphabetic Cipher?</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="monoalphabetic-q4" value="a"> 25</label>
+                    <label><input type="radio" name="monoalphabetic-q4" value="b">  26</label>
+                    <label><input type="radio" name="monoalphabetic-q4" value="c">  Factorial of 26</label>
+                </div>
+            </div>
+	    <div class="quiz-question" id="monoalphabetic-quiz-question-5">
+                <p>5. How many possible keys are there in the monoalphabetic Cipher?</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="monoalphabetic-q5" value="a"> Substitution table</label>
+                    <label><input type="radio" name="monoalphabetic-q5" value="b"> Shift Amount</label>
+                    <label><input type="radio" name="monoalphabetic-q5" value="c"> Polygraphic Key</label>
+                </div>
+            </div>
+	    <div class="quiz-question" id="monoalphabetic-quiz-question-6">
+                <p>6. What does it mean if a letter is repeated in the Monoalphabetic Cipher key?</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="monoalphabetic-q6" value="a">  It will be encrypted differently each time</label>
+                    <label><input type="radio" name="monoalphabetic-q6" value="b"> It will have the same encryption as the first occurrence
+</label>
+                    <label><input type="radio" name="monoalphabetic-q6" value="c"> It will not be encrypted</label>
+                </div>
+            </div>
+	    <div class="quiz-question" id="monoalphabetic-quiz-question-7">
+                <p>7. Which of the following is an example of a Monoalphabetic Cipher?</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="monoalphabetic-q7" value="a">  Vigenère Cipher</label>
+                    <label><input type="radio" name="monoalphabetic-q7" value="b"> Playfair Cipher</label>
+                    <label><input type="radio" name="monoalphabetic-q7" value="c"> Atbash Cipher</label>
+                </div>
+            </div>
+	    <div class="quiz-question" id="monoalphabetic-quiz-question-8">
+                <p>8. The Monoalphabetic Cipher is also known as:</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="monoalphabetic-q8" value="a"> Simple Substitution Cipher</label>
+                    <label><input type="radio" name="monoalphabetic-q8" value="b"> Double Transposition Cipher</label>
+                    <label><input type="radio" name="monoalphabetic-q8" value="c"> Rail Fence Cipher</label>
+                </div>
+            </div>
+	    <div class="quiz-question" id="monoalphabetic-quiz-question-9">
+                <p>9. Which key management technique can enhance the security of the Monoalphabetic Cipher?</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="monoalphabetic-q9" value="a"> Using a longer key</label>
+                    <label><input type="radio" name="monoalphabetic-q9" value="b">  Randomizing the key</label>
+                    <label><input type="radio" name="monoalphabetic-q9" value="c"> Employing a key rotation mechanism</label>
+                </div>
+            </div>
+	    <div class="quiz-question" id="monoalphabetic-quiz-question-10">
+                <p>10. What is the main advantage of the Monoalphabetic Cipher?</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="monoalphabetic-q10" value="a"> High computational efficiency</label>
+                    <label><input type="radio" name="monoalphabetic-q10" value="b"> Strong resistance to cryptanalysis</label>
+                    <label><input type="radio" name="monoalphabetic-q10" value="c">  Easy implementation and understanding</label>
+                </div>
+            </div>
+            <!-- Add more quiz questions similarly -->
+            <button onclick="submitMonoalphabeticQuiz()">Submit Quiz</button>
+            <p id="monoalphabetic-quiz-results"></p>
+        </div>
+    </div>
+
+    <a href="index.html">Back to Main Page</a>
+
+    <script src="script.js"></script>
+</body>
+</html>
