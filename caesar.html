@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caesar Cipher</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="caesar" class="cipher-section">
+        <h2>Caesar Cipher</h2>
+        <div id="caesar-teaching">
+            <h3>Teaching Material</h3>
+            <p>The Caesar Cipher is a substitution cipher where each letter in the plaintext is shifted a certain number of places down or up the alphabet.</p>
+            <p>To encrypt a message, each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet.</p>
+            <p>To decrypt a message, each letter in the ciphertext is replaced by a letter some fixed number of positions up the alphabet.</p>
+        </div>
+        <div id="caesar-form">
+            <label for="caesar-plaintext">Enter plaintext:</label><br>
+            <input type="text" id="caesar-plaintext" name="caesar-plaintext"><br>
+            <label for="caesar-shift">Enter shift (0-25):</label><br>
+            <input type="number" id="caesar-shift" name="caesar-shift" min="0" max="25" value="3"><br>
+            <button onclick="caesarEncrypt()">Encrypt</button>
+            <button onclick="caesarDecrypt()">Decrypt</button>
+            <p id="caesar-ciphertext"></p>
+        </div>
+        <div id="caesar-quiz">
+            <h3>Quiz</h3>
+            <div class="quiz-question" id="caesar-quiz-question-1">
+                <p>1. The Caesar Cipher is a:</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="caesar-q1" value="a"> Substitution Cipher</label>
+                    <label><input type="radio" name="caesar-q1" value="b"> Transposition Cipher</label>
+                    <label><input type="radio" name="caesar-q1" value="c"> Polygraphic Cipher</label>
+                </div>
+            </div>
+            <div class="quiz-question" id="caesar-quiz-question-2">
+                <p>2. In the Caesar Cipher, a shift of 3 corresponds to:</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="caesar-q2" value="a"> Moving 3 places up the alphabet</label>
+                    <label><input type="radio" name="caesar-q2" value="b"> Moving 3 places down the alphabet</label>
+                    <label><input type="radio" name="caesar-q2" value="c"> Shifting the alphabet by 3 places</label>
+                </div>
+            </div>
+	    <div class="quiz-question" id="caesar-quiz-question-3">
+                <p>3. In Caesar Cipher, shifting the alphabet backward is equivalent to:</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="caesar-q3" value="a">  Encryption</label>
+                    <label><input type="radio" name="caesar-q3" value="b"> Decryption</label>
+                    <label><input type="radio" name="caesar-q3" value="c"> None of the above</label>
+                </div>
+            </div>
+	    <div class="quiz-question" id="caesar-quiz-question-4">
+                <p>4. The Caesar Cipher is named after which historical figure?</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="caesar-q4" value="a"> Julius Caesar</label>
+                    <label><input type="radio" name="caesar-q4" value="b">  Alexander the Great</label>
+                    <label><input type="radio" name="caesar-q4" value="c">  Napoleon Bonaparte</label>
+                </div>
+            </div>
+	    <div class="quiz-question" id="caesar-quiz-question-5">
+                <p>5. How many possible keys are there in the Caesar Cipher?</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="caesar-q5" value="a"> 25</label>
+                    <label><input type="radio" name="caesar-q5" value="b"> 26</label>
+                    <label><input type="radio" name="caesar-q5" value="c"> 27</label>
+                </div>
+            </div>
+	    <div class="quiz-question" id="caesar-quiz-question-6">
+                <p>6. In Caesar Cipher, shifting the alphabet by 0 places results in:</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="caesar-q6" value="a">  No encryption</label>
+                    <label><input type="radio" name="caesar-q6" value="b"> Double encryption</label>
+                    <label><input type="radio" name="caesar-q6" value="c"> Decryption</label>
+                </div>
+            </div>
+	    <div class="quiz-question" id="caesar-quiz-question-7">
+                <p>7. The Caesar Cipher is a type of:</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="caesar-q7" value="a"> Symmetric Encryption</label>
+                    <label><input type="radio" name="caesar-q7" value="b"> Asymmetric Encryption</label>
+                    <label><input type="radio" name="caesar-q7" value="c"> Hashing</label>
+                </div>
+            </div>
+	    <div class="quiz-question" id="caesar-quiz-question-8">
+                <p>8. What is the decryption key for a Caesar Cipher with encryption key 5?</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="caesar-q8" value="a"> 5</label>
+                    <label><input type="radio" name="caesar-q8" value="b"> -5</label>
+                    <label><input type="radio" name="caesar-q8" value="c"> 21</label>
+                </div>
+            </div>
+	    <div class="quiz-question" id="caesar-quiz-question-9">
+                <p>9. Which alphabet corresponds to 'A' in the Caesar Cipher</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="caesar-q9" value="a"> Z</label>
+                    <label><input type="radio" name="caesar-q9" value="b"> B</label>
+                    <label><input type="radio" name="caesar-q9" value="c"> D</label>
+                </div>
+            </div>
+	    <div class="quiz-question" id="caesar-quiz-question-10">
+                <p>10. What happens if the Caesar Cipher encryption key is 26</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="caesar-q10" value="a"> It's equivalent to a key of 0</label>
+                    <label><input type="radio" name="caesar-q10" value="b"> It's equivalent to a key of 25</label>
+                    <label><input type="radio" name="caesar-q10" value="c"> It's equivalent to a key of 1</label>
+                </div>
+            </div>
+	    <button onclick="submitCaesarQuiz()">Submit Quiz</button>
+            <p id="caesar-quiz-results"></p>
+        </div>
+    </div>
+
+    <a href="index.html">Back to Main Page</a>
+
+    <script src="script.js"></script>
+</body>
+</html>
