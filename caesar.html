@@ -14,7 +14,12 @@
             <p>The Caesar Cipher is a substitution cipher where each letter in the plaintext is shifted a certain number of places down or up the alphabet.</p>
             <p>To encrypt a message, each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet.</p>
             <p>To decrypt a message, each letter in the ciphertext is replaced by a letter some fixed number of positions up the alphabet.</p>
-        </div>
+	    <p>The Caesar Cipher technique is one of the earliest and simplest methods of encryption technique. It’s simply a type of substitution cipher, i.e., each letter of a given text is replaced by a letter with a fixed number of positions down the alphabet. For example with a shift of 1, A would be replaced by B, B would become C, and so on. The method is apparently named after Julius Caesar, who apparently used it to communicate with his officials</p>
+	    <p>Thus to cipher a given text we need an integer value, known as a shift which indicates the number of positions each letter of the text has been moved down. 
+The encryption can be represented using modular arithmetic by first transforming the letters into numbers, according to the scheme, A = 0, B = 1,…, Z = 25. Encryption of a letter by a shift n can be described mathematically as.</p>
+	    <p>For example, if the shift is 3, then the letter A would be replaced by the letter D, B would become E, C would become F, and so on. The alphabet is wrapped around so that after Z, it starts back at A.</p>
+	    
+	</div>
         <div id="caesar-form">
             <label for="caesar-plaintext">Enter plaintext:</label><br>
             <input type="text" id="caesar-plaintext" name="caesar-plaintext"><br>
