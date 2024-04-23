@@ -215,7 +215,7 @@ function monoalphabeticEncrypt() {
 
 // Monoalphabetic Cipher Decryption Function
 function monoalphabeticDecrypt() {
-    const ciphertext = document.getElementById('monoalphabetic-ciphertext').innerText.toUpperCase();
+    const ciphertext = document.getElementById('monoalphabetic-plaintext').value.toUpperCase();
     const key = document.getElementById('monoalphabetic-key').value.toUpperCase();
     let plaintext = '';
 
@@ -229,6 +229,6 @@ function monoalphabeticDecrypt() {
         }
     }
 
-    document.getElementById('monoalphabetic-plaintext').value = plaintext.toLowerCase();
+    document.getElementById('monoalphabetic-ciphertext').innerText = ciphertext;
 }
 
