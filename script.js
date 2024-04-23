@@ -229,6 +229,6 @@ function monoalphabeticDecrypt() {
         }
     }
 
-    document.getElementById('monoalphabetic-ciphertext').innerText = ciphertext;
+    document.getElementById('monoalphabetic-ciphertext').innerText = plaintext;
 }
 
